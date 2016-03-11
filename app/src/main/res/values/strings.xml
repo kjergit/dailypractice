@@ -1,0 +1,29 @@
+<resources>
+    <!--app-->
+    <string name="app_versionName">0.01</string>
+    <string name="app_name">DailyPractice</string>
+    <!--crash tips-->
+    <string name="app_crash_prompt">很抱歉,应用程序出现异常，即将退出...</string>
+
+    <!--activity name-->
+    <string name="actionbar_test">actionbar</string>
+    <string name="image_bitmap">BigImageBitmap</string>
+    <string name="leak_test">内存泄漏</string>
+    <string name="save_pic">屏幕截图</string>
+
+    <!--HomeActivity list name-->
+    <string-array name="home_name_list">
+        <item>@string/actionbar_test</item>
+        <item>@string/image_bitmap</item>
+        <!--<item>@string/leak_test</item>-->
+        <!--<item>@string/switch_button</item>-->
+        <item>@string/save_pic</item>
+    </string-array>
+
+
+    <string name="switch_button">switch button</string>
+    <!--about home activty-->
+    <string name="home_bottom_hint">kjer日常练习</string>
+
+
+</resources>

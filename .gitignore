@@ -1,0 +1,13 @@
+/out
+.idea/
+/build
+bin
+gen
+output
+libraries
+build
+*.iml
+.gradle
+/local.properties
+
+
