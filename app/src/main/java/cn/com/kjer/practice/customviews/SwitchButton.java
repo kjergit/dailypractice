@@ -27,8 +27,6 @@ import cn.com.kjer.practice.utils.ColorUtils;
 
 /**
  * SwitchButton
- * 切换效果的button(来自github)
- *
  * @author kyleduo
  * @version 1.2.10
  * @since 2014-09-24

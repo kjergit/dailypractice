@@ -11,7 +11,7 @@ import cn.com.kjer.practice.image.BitmapActivity;
 import cn.com.kjer.practice.temp.SavePicToSDCard;
 
 public class HomeActivity extends BaseActivity {
-    
+
     private ListView listView;
 
     @Override
@@ -53,11 +53,6 @@ public class HomeActivity extends BaseActivity {
                     case 2:
                         startActivity(new Intent(HomeActivity.this, SavePicToSDCard.class));
                         break;
-//                    case 3:
-//                        startActivity(new Intent(HomeActivity.this, SwitchButtonActivity.class));
-//                        break;
-//                    case 4:
-//                        startActivity(new Intent(HomeActivity.this, SavePicToSDCard.class));
                     default:
                         break;
                 }

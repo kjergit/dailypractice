@@ -28,13 +28,6 @@
             android:name="cn.com.kjer.practice.image.BitmapActivity"
             android:hardwareAccelerated="false"
             android:label="@string/image_bitmap" />
-        <activity
-            android:name="cn.com.kjer.practice.LeakActivity"
-            android:label="@string/leak_test" />
-        <activity
-            android:name="cn.com.kjer.practice.SwitchButtonActivity"
-            android:label="@string/switch_button" />
-
 
         <!--leak start-->
         <service
