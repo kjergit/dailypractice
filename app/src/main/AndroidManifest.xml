@@ -4,7 +4,7 @@
     android:versionCode="1"
     android:versionName="0.01">
 
-    <uses-sdk android:minSdkVersion="9" />
+    <uses-sdk android:minSdkVersion="14" />
     <application
         android:name="cn.com.kjer.practice.MyApplication"
         android:allowBackup="true"
@@ -54,7 +54,10 @@
         <!--leak end -->
         <activity
             android:name=".temp.SavePicToSDCard"
-            android:label="@string/save_pic"></activity>
+            android:label="@string/save_pic"/>
+        <activity
+            android:name=".collectionitempicker.ListDataActivity"
+            android:label="@string/collection_item" />
     </application>
 
 </manifest>

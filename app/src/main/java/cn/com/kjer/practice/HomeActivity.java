@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import cn.com.kjer.practice.actionbar.MyActionBarActivity;
+import cn.com.kjer.practice.collectionitempicker.ListDataActivity;
 import cn.com.kjer.practice.image.BitmapActivity;
 import cn.com.kjer.practice.temp.SavePicToSDCard;
 
@@ -52,6 +53,9 @@ public class HomeActivity extends BaseActivity {
                         break;
                     case 2:
                         startActivity(new Intent(HomeActivity.this, SavePicToSDCard.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(HomeActivity.this, ListDataActivity.class));
                         break;
                     default:
                         break;

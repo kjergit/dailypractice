@@ -8,16 +8,17 @@
     <!--activity name-->
     <string name="actionbar_test">actionbar</string>
     <string name="image_bitmap">BigImageBitmap</string>
-    <string name="leak_test">内存泄漏</string>
     <string name="save_pic">屏幕截图</string>
+    <string name="collection_item">层叠item</string>
 
+    <!--<item>@string/leak_test</item>-->
+    <!--<item>@string/switch_button</item>-->
     <!--HomeActivity list name-->
     <string-array name="home_name_list">
         <item>@string/actionbar_test</item>
         <item>@string/image_bitmap</item>
-        <!--<item>@string/leak_test</item>-->
-        <!--<item>@string/switch_button</item>-->
         <item>@string/save_pic</item>
+        <item>@string/collection_item</item>
     </string-array>
 
 

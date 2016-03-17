@@ -3,9 +3,14 @@
     <color name="app_black">#000000</color>
     <color name="app_white">#ffffff</color>
 
-
     <!--about switch button-->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--about CollectionPicker-->
+    <color name="blue">#3F5BE2</color>
+    <color name="red">#FE3923</color>
+
+
 </resources>
