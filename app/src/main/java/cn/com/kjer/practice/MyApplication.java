@@ -14,21 +14,21 @@ import cn.com.kjer.practice.utils.MyCrashHandler;
  */
 public class MyApplication extends Application {
 
-//    private RefWatcher refWatcher;
+    private RefWatcher refWatcher;
 
     @Override
     public void onCreate() {
         super.onCreate();
         //内存泄露检测
-        LeakCanary.install(this);
+        refWatcher = LeakCanary.install(this);
         //初始化全局异常监测器
         MyCrashHandler.getInstance().init(this);
     }
 
-//    public static RefWatcher getRefWatcher(Context context) {
-//        MyApplication application = (MyApplication) context.getApplicationContext();
-//        return application.refWatcher;
-//    }
+    public static RefWatcher getRefWatcher(Context context) {
+        MyApplication application = (MyApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
 
 
     @Override

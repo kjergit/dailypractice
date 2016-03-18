@@ -13,19 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".HomeActivity">
+        <activity android:name=".activitys.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="cn.com.kjer.practice.actionbar.MyActionBarActivity"
-            android:label="@string/actionbar_test" />
         <!--android:hardwareAccelerated="false" 硬件加速关闭（api11后默认开启 ，加载大图片不显示）-->
         <activity
-            android:name="cn.com.kjer.practice.image.BitmapActivity"
+            android:name=".activitys.BitmapActivity"
             android:hardwareAccelerated="false"
             android:label="@string/image_bitmap" />
 
@@ -52,12 +49,12 @@
             </intent-filter>
         </activity>
         <!--leak end -->
-        <activity
-            android:name=".temp.SavePicToSDCard"
-            android:label="@string/save_pic"/>
+
         <activity
             android:name=".collectionitempicker.ListDataActivity"
             android:label="@string/collection_item" />
+        <activity android:name=".temp.CanvasActivity"
+            android:label="@string/canvas_draw_test"/>
     </application>
 
 </manifest>

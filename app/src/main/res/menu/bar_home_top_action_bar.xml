@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--android:showAsAction="" 让菜单item成为action item  ifRoom(控件充足) always(一定显示) -->
+    <!--默认直线式图标，如果需要显示文字，必须添加此属性 -->
+    <item
+        android:id="@+id/radio"
+        android:icon="@drawable/ic_radio_button_unchecked"
+        android:title="radio"
+        app:showAsAction="ifRoom|withText"
+        tools:ignore="AppCompatResource" />
+    <item
+        android:id="@+id/star"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="star"
+        app:showAsAction="ifRoom|withText"
+        tools:ignore="AppCompatResource" />
+</menu>

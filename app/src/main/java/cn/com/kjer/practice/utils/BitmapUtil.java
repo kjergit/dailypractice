@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,6 +22,21 @@ public class BitmapUtil {
         view.buildDrawingCache();
         Bitmap bitmap = view.getDrawingCache();
         return bitmap;
+    }
+
+    /**
+     * 保存layout 图像到手机
+     * @param rootView 需要截图的根layout
+     */
+    public static String doSavePicture(Context context, ViewGroup rootView) {
+        String hint = "保存失败";
+        Bitmap bitmap = BitmapUtil.getViewCacheBitMap(rootView);
+        if (bitmap != null) {
+            hint = BitmapUtil.saveBitmapToSdcard(context.getApplicationContext()
+                    , bitmap, SDcardUtils.getRoot() + File.separator + System.currentTimeMillis() + Constant.PNG_SUFFIX);
+            Toast.makeText(context.getApplicationContext(), hint, Toast.LENGTH_SHORT).show();
+        }
+        return hint;
     }
 
     /**

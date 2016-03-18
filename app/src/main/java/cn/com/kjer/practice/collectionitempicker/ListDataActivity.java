@@ -4,10 +4,13 @@ package cn.com.kjer.practice.collectionitempicker;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.squareup.leakcanary.RefWatcher;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.com.kjer.practice.BaseActivity;
+import cn.com.kjer.practice.activitys.BaseActivity;
+import cn.com.kjer.practice.MyApplication;
 import cn.com.kjer.practice.R;
 
 /**
@@ -38,6 +41,13 @@ public class ListDataActivity extends BaseActivity {
         });
 
         mTextView = (TextView) findViewById(R.id.text);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        RefWatcher refWatcher = MyApplication.getRefWatcher(this);
+        refWatcher.watch(this);
     }
 
     private List<Item> generateItems() {
