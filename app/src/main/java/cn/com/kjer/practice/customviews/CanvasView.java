@@ -56,16 +56,19 @@ public class CanvasView extends View {
 
     /***
      * 相交区域进行绘制
+     * 500,500到 750，750 交集出进行绘制
      * @param canvas
      */
-//    private void intersect(Canvas canvas) {
-//        canvas.drawColor(Color.BLUE);
-//
-//        Rect rect = new Rect(0, 0, 500, 500);
-//        rect.intersect(250, 250, 750, 750);
-//        canvas.clipRect(rect);
-//        canvas.drawColor(Color.RED);
-//    }
+    private void intersect(Canvas canvas) {
+        canvas.drawColor(Color.BLUE);
+
+        Rect rect = new Rect(0, 0, 500, 500);
+        boolean intersect = rect.intersect(250, 250, 750, 750);
+        if(intersect){
+            canvas.clipRect(rect);
+            canvas.drawColor(Color.RED);
+        }
+    }
 
     /**
      * 剪裁矩形
