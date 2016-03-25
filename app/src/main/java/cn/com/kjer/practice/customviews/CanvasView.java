@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathEffect;
 import android.graphics.PathMeasure;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -22,55 +23,55 @@ public class CanvasView extends View {
     /**
      * Paint
      * setARGB(int a,int r,int g,int b)设置绘制的颜色，a代表透明度，r，g，b代表颜色值。
-     * <p>
+     * <p/>
      * setAlpha(int a);设置绘制图形的透明度。
-     * <p>
+     * <p/>
      * setColor(int color);设置绘制的颜色，使用颜色值来表示，该颜色值包括透明度和RGB颜色。
-     * <p>
+     * <p/>
      * setAntiAlias(boolean aa);设置是否使用抗锯齿功能，会消耗较大资源，绘制图形速度会变慢。
-     * <p>
+     * <p/>
      * setDither(boolean dither);设定是否使用图像抖动处理，会使绘制出来的图片颜色更加平滑和饱满，图像更加清晰
-     * <p>
+     * <p/>
      * setFilterBitmap(boolean filter);如果该项设置为true，则图像在动画进行中会滤掉对Bitmap图像的优化操作，
      * 加快显示速度，本设置项依赖于dither和xfermode的设置
-     * <p>
+     * <p/>
      * setMaskFilter(MaskFilter maskfilter);设置MaskFilter，可以用不同的MaskFilter实现滤镜的效果，如滤化，立体等       *
      * setColorFilter(ColorFilter colorfilter);设置颜色过滤器，可以在绘制颜色时实现不用颜色的变换效果
-     * <p>
+     * <p/>
      * setPathEffect(PathEffect effect);设置绘制路径的效果，如点画线等
-     * <p>
+     * <p/>
      * setShader(Shader shader);设置图像效果，使用Shader可以绘制出各种渐变效果
-     * <p>
+     * <p/>
      * setShadowLayer(float radius ,float dx,float dy,int color);在图形下面设置阴影层，产生阴影效果，radius为阴影的角度，
      * dx和dy为阴影在x轴和y轴上的距离，color为阴影的颜色
-     * <p>
+     * <p/>
      * setStyle(Paint.Style style);设置画笔的样式，为FILL，FILL_OR_STROKE，或STROKE
-     * <p>
+     * <p/>
      * setStrokeCap(Paint.Cap cap);当画笔样式为STROKE或FILL_OR_STROKE时，设置笔刷的图形样式，如圆形样式Cap.ROUND,或方形样式Cap.SQUARE
-     * <p>
+     * <p/>
      * setSrokeJoin(Paint.Join join);设置绘制时各图形的结合方式，如平滑效果等
-     * <p>
+     * <p/>
      * setStrokeWidth(float width);当画笔样式为STROKE或FILL_OR_STROKE时，设置笔刷的粗细度
-     * <p>
+     * <p/>
      * setXfermode(Xfermode xfermode);设置图形重叠时的处理方式，如合并，取交集或并集，经常用来制作橡皮的擦除效果
-     * <p>
+     * <p/>
      * 2.文本绘制
      * setFakeBoldText(boolean fakeBoldText);模拟实现粗体文字，设置在小字体上效果会非常差
-     * <p>
+     * <p/>
      * setSubpixelText(boolean subpixelText);设置该项为true，将有助于文本在LCD屏幕上的显示效果
-     * <p>
+     * <p/>
      * setTextAlign(Paint.Align align);设置绘制文字的对齐方向
-     * <p>
+     * <p/>
      * setTextScaleX(float scaleX);设置绘制文字x轴的缩放比例，可以实现文字的拉伸的效果
-     * <p>
+     * <p/>
      * setTextSize(float textSize);设置绘制文字的字号大小
-     * <p>
+     * <p/>
      * setTextSkewX(float skewX);设置斜体文字，skewX为倾斜弧度
-     * <p>
+     * <p/>
      * setTypeface(Typeface typeface);设置Typeface对象，即字体风格，包括粗体，斜体以及衬线体，非衬线体等
-     * <p>
+     * <p/>
      * setUnderlineText(boolean underlineText);设置带有下划线的文字效果
-     * <p>
+     * <p/>
      * setStrikeThruText(boolean strikeThruText);设置带有删除线的效果
      */
     private Paint mPaint;
@@ -79,7 +80,7 @@ public class CanvasView extends View {
     /**
      * 是否path路径动画,控制int() 绘制图形
      */
-    private boolean isAnimation = true;
+    private boolean isAnimation = false;
     /**
      * 动画坐标
      */
@@ -115,10 +116,10 @@ public class CanvasView extends View {
      * canvas.drawRoundRect（圆角矩形）
      * canvas.drawVertices（顶点）
      * cnavas.drawPath（路径）
-     * <p>
+     * <p/>
      * 文字
      * canvas.drawText
-     * <p>
+     * <p/>
      * 图片
      * canvas.drawBitmap （位图）
      * canvas.drawPicture （图片）
@@ -129,13 +130,13 @@ public class CanvasView extends View {
         super.onDraw(canvas);
         if (!isAnimation) {
             setPaint();
-//            setPath(canvas);
-//            setBezieCurves(canvas);
-
+            setPath(canvas);
+            setBezieCurves(canvas);
+            //about canvas
 //        clipRect(canvas);
 //        intersect(canvas);
-//        clipPath(canvas);
-//        arcTo(canvas);
+//            clipPath(canvas);
+
         } else {
 
             //动画动态绘制,与其他方法冲突
@@ -271,6 +272,8 @@ public class CanvasView extends View {
         // 绘制对应目标
         canvas.drawCircle(mCurrentPosition[0], mCurrentPosition[1], 10, mPaint);
     }
+
+
     /***************************************path over**********************************/
 
 
@@ -307,10 +310,10 @@ public class CanvasView extends View {
     /**
      * quadTo 用于绘制圆滑曲线，即贝塞尔曲线。
      * mPath.quadTo(x1, y1, x2, y2) (x1,y1) 为控制点，(x2,y2)为结束点
-     * <p>
+     * <p/>
      * cubicTo 同样是用来实现贝塞尔曲线的,
      * mPath.cubicTo(x1, y1, x2, y2, x3, y3) (x1,y1) 为控制点，(x2,y2)为控制点，(x3,y3) 为结束点。
-     * <p>
+     * <p/>
      */
     private void clipPath(Canvas canvas) {
         Paint mPaint = new Paint();
