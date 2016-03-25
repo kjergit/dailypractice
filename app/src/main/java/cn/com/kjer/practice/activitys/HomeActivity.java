@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import cn.com.kjer.practice.R;
 import cn.com.kjer.practice.collectionitempicker.ListDataActivity;
-import cn.com.kjer.practice.temp.CanvasActivity;
 
 public class HomeActivity extends BaseActivity {
 

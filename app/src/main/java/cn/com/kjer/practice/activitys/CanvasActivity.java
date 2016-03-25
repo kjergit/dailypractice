@@ -1,4 +1,4 @@
-package cn.com.kjer.practice.temp;
+package cn.com.kjer.practice.activitys;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,7 +33,7 @@ public class CanvasActivity extends BaseActivity {
 
     private void initView() {
         canvasView = (CanvasView) findViewById(R.id.canvas_layout);
-        //是否启动动画
-        mHandler.sendEmptyMessage(0);
+        //是否启动动画 对应 CanvasView 中 isAnimation
+//        mHandler.sendEmptyMessage(0);
     }
 }

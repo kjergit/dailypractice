@@ -53,8 +53,9 @@
         <activity
             android:name=".collectionitempicker.ListDataActivity"
             android:label="@string/collection_item" />
-        <activity android:name=".temp.CanvasActivity"
-            android:label="@string/canvas_draw_test"/>
+        <activity
+            android:name=".activitys.CanvasActivity"
+            android:label="@string/canvas_draw_test" />
     </application>
 
 </manifest>
