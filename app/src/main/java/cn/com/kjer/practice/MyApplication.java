@@ -1,8 +1,8 @@
 package cn.com.kjer.practice;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.support.multidex.MultiDexApplication;
 
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -12,7 +12,7 @@ import cn.com.kjer.practice.utils.MyCrashHandler;
 /**
  * Created by kjer on 2015/12/8.
  */
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
 
     private RefWatcher refWatcher;
 
