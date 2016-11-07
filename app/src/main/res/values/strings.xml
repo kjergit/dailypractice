@@ -5,16 +5,22 @@
     <!--crash tips-->
     <string name="app_crash_prompt">很抱歉,应用程序出现异常，即将退出...</string>
 
+
     <!--activity name-->
     <string name="image_bitmap">BigImageBitmap</string>
     <string name="collection_item">层叠item</string>
     <string name="canvas_draw_test">canvas练习</string>
+    <string name="vollery_test">vollery练习</string>
+    <string name="downlaod_test">图片下载 缓存 </string>
+
 
     <!--HomeActivity list name-->
     <string-array name="home_name_list">
         <item>@string/image_bitmap</item>
         <item>@string/collection_item</item>
         <item>@string/canvas_draw_test</item>
+        <item>@string/vollery_test</item>
+        <item>@string/downlaod_test</item>
     </string-array>
 
 

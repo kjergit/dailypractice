@@ -12,5 +12,6 @@
     <color name="blue">#3F5BE2</color>
     <color name="red">#FE3923</color>
 
+    <color name="status_bar_test_color">#B9E4F5</color>
 
 </resources>

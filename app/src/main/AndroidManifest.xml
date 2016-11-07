@@ -5,6 +5,10 @@
     android:versionName="0.01">
 
     <uses-sdk android:minSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="cn.com.kjer.practice.MyApplication"
         android:allowBackup="true"
@@ -13,18 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activitys.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/StatusBarTranslucentTheme"></activity>
 
         <!--android:hardwareAccelerated="false" 硬件加速关闭（api11后默认开启 ，加载大图片不显示）-->
-        <activity
-            android:name=".activitys.BitmapActivity"
-            android:hardwareAccelerated="false"
-            android:label="@string/image_bitmap" />
 
         <!--leak start-->
         <service
@@ -54,8 +51,33 @@
             android:name=".collectionitempicker.ListDataActivity"
             android:label="@string/collection_item" />
         <activity
-            android:name=".activitys.CanvasActivity"
+            android:name=".canvasTest.activitys.CanvasActivity"
             android:label="@string/canvas_draw_test" />
+        <activity
+            android:name=".loadImage.BitmapActivity"
+            android:hardwareAccelerated="false"
+            android:label="@string/image_bitmap" />
+        <activity
+            android:name=".volleryTest.VolleryTestActivity"
+            android:label="@string/vollery_test" />
+
+        <activity
+            android:name=".loadImage.DownLoadActivity"
+            android:hardwareAccelerated="false"
+            android:label="@string/downlaod_test"
+            android:theme="@style/StatusBarColorTranslucentTheme" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:hardwareAccelerated="false"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

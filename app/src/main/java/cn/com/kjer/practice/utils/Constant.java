@@ -28,6 +28,7 @@ public class Constant {
     //id
     public static final String KEY_ID = "KEY_ID";
     public static final String KEY_NUM = "KEY_NUM";
+    public static final String KEY_STRING = "KEY_STRING";
 
     //图片后缀
     public static final String PNG_SUFFIX = ".png";

@@ -9,7 +9,7 @@ import com.squareup.leakcanary.RefWatcher;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.com.kjer.practice.activitys.BaseActivity;
+import cn.com.kjer.practice.BaseActivity;
 import cn.com.kjer.practice.MyApplication;
 import cn.com.kjer.practice.R;
 
