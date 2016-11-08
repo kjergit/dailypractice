@@ -1,19 +1,24 @@
 package cn.com.kjer.practice;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import cn.com.kjer.practice.canvasTest.activitys.CanvasActivity;
 import cn.com.kjer.practice.collectionitempicker.ListDataActivity;
+import cn.com.kjer.practice.drawerLayout.DrawerLayoutActivity;
 import cn.com.kjer.practice.loadImage.BitmapActivity;
 import cn.com.kjer.practice.loadImage.DownLoadActivity;
 import cn.com.kjer.practice.utils.SystemUtil;
@@ -21,7 +26,11 @@ import cn.com.kjer.practice.volleryTest.VolleryTestActivity;
 
 public class HomeActivity extends BaseActivity {
 
-    private ListView listView;
+    private ListView mListView;
+
+    private DrawerLayout mDrawerLayout;
+    private Toolbar mToolbar;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +41,20 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onFindViews() {
         super.onFindViews();
-        listView = (ListView) findViewById(R.id.home_listview);
+        initToolBar();
+        initDrawableLayout();
+        mListView = (ListView) findViewById(R.id.home_listview);
     }
+
+    private void initDrawableLayout() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.home_drawer_layout);
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open,
+                R.string.drawer_close);
+        mDrawerToggle.syncState();
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+    }
+
 
     @Override
     protected void onInit() {
@@ -50,7 +71,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void onSetListener() {
         super.onSetListener();
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
@@ -69,6 +90,9 @@ public class HomeActivity extends BaseActivity {
                     case 4:
                         startActivity(new Intent(HomeActivity.this, DownLoadActivity.class));
                         break;
+                    case 5:
+                        startActivity(new Intent(HomeActivity.this, DrawerLayoutActivity.class));
+                        break;
                     default:
                         break;
                 }
@@ -78,12 +102,22 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.bar_home_top_action_bar, menu);
-        return true;
+        inflater.inflate(R.menu.base_top_tool_bar, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
+    private void initToolBar() {
+        mToolbar = (Toolbar) findViewById(R.id.layout_tool_bar);
+//        mToolbar.setLogo(R.drawable.title_bar_more);
+//        mToolbar.setNavigationIcon(R.drawable.back_arrow);
+        mToolbar.setTitle(getResources().getString(R.string.app_name));// 标题的文字需在setSupportActionBar之前，不然会无效
+        setSupportActionBar(mToolbar);
+
+//        android.support.v7.app.ActionBar actionbar = getSupportActionBar();
+//        //用 ActionBar 设置返回图标
+//        actionbar.setDisplayHomeAsUpEnabled(true);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -101,18 +135,15 @@ public class HomeActivity extends BaseActivity {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            //点击back键不会回到启动页面，因而需要监听
-            //启动并且不接收数据
-            Intent i = new Intent(Intent.ACTION_MAIN);
-            //新的activity栈中开启，或者已经存在就调到栈前
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //添加种类，为设备首次启动显示的页面
-            i.addCategory(Intent.CATEGORY_HOME);
-            startActivity(i);
-        }
-        return super.onKeyDown(keyCode, event);
+    public void onBackPressed() {
+        //点击back键不会回到启动页面，因而需要监听
+        //启动并且不接收数据
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        //新的activity栈中开启，或者已经存在就调到栈前
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //添加种类，为设备首次启动显示的页面
+        i.addCategory(Intent.CATEGORY_HOME);
+        startActivity(i);
     }
 
     /**

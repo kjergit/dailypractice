@@ -17,9 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".HomeActivity"
-            android:theme="@style/StatusBarTranslucentTheme"></activity>
+
 
         <!--android:hardwareAccelerated="false" 硬件加速关闭（api11后默认开启 ，加载大图片不显示）-->
 
@@ -49,23 +47,35 @@
 
         <activity
             android:name=".collectionitempicker.ListDataActivity"
-            android:label="@string/collection_item" />
+            android:label="@string/collection_item"
+            android:theme="@style/StatusBarColorTranslucentTheme" />
         <activity
             android:name=".canvasTest.activitys.CanvasActivity"
-            android:label="@string/canvas_draw_test" />
+            android:label="@string/canvas_draw_test"
+            android:theme="@style/StatusBarColorTranslucentTheme" />
         <activity
             android:name=".loadImage.BitmapActivity"
             android:hardwareAccelerated="false"
-            android:label="@string/image_bitmap" />
+            android:label="@string/image_bitmap"
+            android:theme="@style/StatusBarColorTranslucentTheme" />
         <activity
             android:name=".volleryTest.VolleryTestActivity"
-            android:label="@string/vollery_test" />
+            android:label="@string/vollery_test"
+            android:theme="@style/StatusBarColorTranslucentTheme" />
 
         <activity
             android:name=".loadImage.DownLoadActivity"
             android:hardwareAccelerated="false"
             android:label="@string/downlaod_test"
             android:theme="@style/StatusBarColorTranslucentTheme" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/StatusBarTranslucentTheme"/>
+        <activity
+            android:name=".drawerLayout.DrawerLayoutActivity"
+            android:hardwareAccelerated="false"
+            android:label="@string/drawerlayout_test"
+            android:theme="@style/StatusBarTranslucentTheme" />
 
         <activity
             android:name=".SplashActivity"

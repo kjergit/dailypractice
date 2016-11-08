@@ -12,6 +12,7 @@
     <string name="canvas_draw_test">canvas练习</string>
     <string name="vollery_test">vollery练习</string>
     <string name="downlaod_test">图片下载 缓存 </string>
+    <string name="drawerlayout_test">drawer layout</string>
 
 
     <!--HomeActivity list name-->
@@ -21,6 +22,7 @@
         <item>@string/canvas_draw_test</item>
         <item>@string/vollery_test</item>
         <item>@string/downlaod_test</item>
+        <item>@string/drawerlayout_test</item>
     </string-array>
 
 
@@ -28,5 +30,30 @@
     <!--about home activty-->
     <string name="home_bottom_hint">kjer日常练习</string>
 
+    <!--drawerlayout-->
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 
+    <string-array name="drawer_data_list">
+        <item>11111111111111111111111111</item>
+        <item>222222222222222222222222222</item>
+        <item>33333333333333</item>
+        <item>44444444444444</item>
+        <item>55555555555</item>
+        <item>666666666666</item>
+        <item>77777777</item>
+        <item>888888888</item>
+        <item>99999999999999</item>
+        <item>10000000000000</item>
+        <item>aaaaaaaaaaaa</item>
+        <item>bbbbbbbbbbbbbb</item>
+        <item>ccccccccccccc</item>
+        <item>ddddddddddd</item>
+        <item>eeeeeeeeeeeee</item>
+        <item>fffffffff</item>
+        <item>gggggggggggg</item>
+        <item>hhhhhhhhhhhhhh</item>
+        <item>iiiiiiiiiiiiiiii</item>
+        <item>jjjjjjjjjjjjjjj</item>
+    </string-array>
 </resources>

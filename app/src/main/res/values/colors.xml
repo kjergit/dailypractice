@@ -2,6 +2,8 @@
 <resources>
     <color name="app_black">#000000</color>
     <color name="app_white">#ffffff</color>
+    <color name="app_green">#21F52C</color>
+    <color name="app_blue">#93D7FF</color>
 
     <!--about switch button-->
     <color name="colorPrimary">#3F51B5</color>
@@ -12,6 +14,5 @@
     <color name="blue">#3F5BE2</color>
     <color name="red">#FE3923</color>
 
-    <color name="status_bar_test_color">#B9E4F5</color>
 
 </resources>

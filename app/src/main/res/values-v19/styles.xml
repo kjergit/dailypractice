@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 透明状态栏-->
-    <style name="StatusBarTranslucentTheme" parent="AppTheme">
-        <item name="android:windowTranslucentStatus">true</item>
+    <!--侵入式状态栏第一种设置 设置状态栏颜色-->
+    <style name="StatusBarColorTranslucentTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
-    <style name="StatusBarColorTranslucentTheme" parent="AppTheme">
-        <item name="android:windowTranslucentStatus">false</item>
+    <!-- 侵入式状态栏第二种 设置透明状态栏，状态栏颜色自动适应-->
+    <style name="StatusBarTranslucentTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 

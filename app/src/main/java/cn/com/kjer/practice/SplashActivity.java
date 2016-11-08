@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.KeyEvent;
 
 /**
  * Created by simon on 2016/11/7.
@@ -35,5 +36,10 @@ public class SplashActivity extends Activity {
                 SplashActivity.this.finish();
             }
         }, 3000);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //启动过程中不许返回 因此是空实现
     }
 }

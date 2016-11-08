@@ -25,7 +25,7 @@ import cn.com.kjer.practice.R;
 public class VolleryTestActivity extends BaseActivity {
 
     private TextView contentTv;
-    private Button contentbt;
+    private Button contentBt;
     private ImageView imageView;
 
     private static final String Tag = "Vollery test";
@@ -46,9 +46,9 @@ public class VolleryTestActivity extends BaseActivity {
     protected void onFindViews() {
         super.onFindViews();
         contentTv = (TextView) findViewById(R.id.content_tv);
-        contentbt = (Button) findViewById(R.id.request_button);
+        contentBt = (Button) findViewById(R.id.request_button);
         imageView = (ImageView) findViewById(R.id.imageView);
-        contentbt.setOnClickListener(new View.OnClickListener() {
+        contentBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 doStringRequest();

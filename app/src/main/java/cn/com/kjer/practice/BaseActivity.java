@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.squareup.leakcanary.RefWatcher;
 
 /**
- * Created by kjer
+ * Created by simon
  */
 public class BaseActivity extends AppCompatActivity {
 
@@ -28,7 +28,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
     protected void onInit() {
-        ActionBar actionBar = getSupportActionBar();
+ /*       ActionBar actionBar = getSupportActionBar();
 //        actionBar.hide();//隐藏
 //        actionBar.show();
 
@@ -39,7 +39,7 @@ public class BaseActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             // 把ActionBar下面的阴影去掉（Android5.0下才有的效果）
             getSupportActionBar().setElevation(0);
-        }
+        }*/
     }
 
     protected void onFindViews() {

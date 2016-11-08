@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!-- 透明状态栏-->
+    <!--侵入式状态栏第一种设置 设置状态栏颜色-->
+    <style name="StatusBarColorTranslucentTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!--底部导航栏颜色 透明-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+
+    <!-- 侵入式状态栏第二种  设置透明，状态栏会根据界面颜色 自动适配-->
     <style name="StatusBarTranslucentTheme" parent="AppTheme">
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">true</item>
         <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
         <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-
-    <style name="StatusBarColorTranslucentTheme" parent="AppTheme">
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:statusBarColor">@color/status_bar_test_color</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
 </resources>
