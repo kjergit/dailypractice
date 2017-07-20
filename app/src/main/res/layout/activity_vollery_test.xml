@@ -22,7 +22,7 @@
         android:layout_height="200dp" />
     <ImageView
         android:id="@+id/imageView"
-        android:src="@drawable/__leak_canary_icon"
+        android:src="@drawable/more_info"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
 

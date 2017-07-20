@@ -9,5 +9,10 @@ build
 *.iml
 .gradle
 /local.properties
+/app/*.apk
+/app/*.log
+/captures
 
 
+libs/
+mulan.txt

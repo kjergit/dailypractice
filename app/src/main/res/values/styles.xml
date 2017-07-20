@@ -1,13 +1,18 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <!-- toolbar（actionbar）颜色 -->
         <item name="colorPrimary">@color/app_blue</item>
         <!-- 状态栏颜色 -->
         <item name="colorPrimaryDark">@color/app_blue</item>
         <!-- 窗口的背景颜色 -->
         <item name="android:windowBackground">@color/app_white</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
 
     </style>
     <!--设置状态栏颜色-->

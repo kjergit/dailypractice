@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -78,7 +79,7 @@ public class VolleryTestActivity extends BaseActivity {
 
     private void doImageRequest() {
         ImageRequest imageRequest = new ImageRequest(
-                "http://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=%E5%9B%BE%E7%89%87&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&cs=1126541908,2603454962&os=3355752586,552577105&simid=4125984377,377518992&pn=72&rn=1&di=148610359700&ln=1958&fr=&fmq=1472714291753_R&fm=&ic=undefined&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&is=&istype=0&ist=&jit=&bdtype=0&adpicid=0&pi=&gsm=1e&objurl=http%3A%2F%2Fi1.hexunimg.cn%2F2014-08-15%2F167580248.jpg&rpstart=0&rpnum=0&adpicid=0",
+                "http://img1.imgtn.bdimg.com/it/u=1794894692,1423685501&fm=23&gp=0.jpg",
                 new Response.Listener<Bitmap>() {
                     @Override
                     public void onResponse(Bitmap response) {

@@ -44,7 +44,7 @@ public class MyCrashHandler implements Thread.UncaughtExceptionHandler {
 
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
-        Log.e(Tag, "thread=" + thread.getName() + " " + ex.getLocalizedMessage());
+        Log.e(Tag, "uncaughtExceptio..... thread=" + thread.getName() + " message=" + ex.getLocalizedMessage());
 
         if (!handleException(ex) && defalutHandler != null) {
             //程序默认处理方式

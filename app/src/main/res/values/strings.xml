@@ -13,6 +13,11 @@
     <string name="vollery_test">vollery练习</string>
     <string name="downlaod_test">图片下载 缓存 </string>
     <string name="drawerlayout_test">drawer layout</string>
+    <string name="touch_event">触摸事件练习</string>
+    <string name="carousel">轮播图</string>
+    <string name="rx_java_base">rx_java_base</string>
+    <string name="carousel2">轮播图2</string>
+    <string name="slide">滑动冲突</string>
 
 
     <!--HomeActivity list name-->
@@ -23,6 +28,12 @@
         <item>@string/vollery_test</item>
         <item>@string/downlaod_test</item>
         <item>@string/drawerlayout_test</item>
+        <item>@string/touch_event</item>
+        <item>@string/carousel</item>
+        <item>@string/rx_java_base</item>
+        <item>@string/carousel2</item>
+        <item>@string/slide</item>
+
     </string-array>
 
 
@@ -56,4 +67,5 @@
         <item>iiiiiiiiiiiiiiii</item>
         <item>jjjjjjjjjjjjjjj</item>
     </string-array>
+    <string name="title_activity_main">MainActivity</string>
 </resources>

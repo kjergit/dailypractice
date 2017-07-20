@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.com.kjer.practice.BaseActivity;
 import cn.com.kjer.practice.R;
 
@@ -24,6 +27,7 @@ public class BitmapActivity extends BaseActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bitmap);
+        //test leak
     }
 
 
@@ -49,15 +53,30 @@ public class BitmapActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.big_image:
-                break;
-            case R.id.get_iamge_info_bt:
-                getImageView();
-                break;
-            default:
-                break;
+//test leak
+        click();
+//        switch (v.getId()) {
+//            case R.id.big_image:
+//                break;
+//            case R.id.get_iamge_info_bt:
+//                getImageView();
+//                break;
+//            default:
+//                break;
+//        }
+    }
+
+    //test leak
+    private List list = new ArrayList<ImageView>();
+    private Single s;
+
+    public void click() {
+        for (int i = 0; i < 10000; i++) {
+            ImageView imageView = new ImageView(this);
+            list.add(imageView);
         }
+        s= Single.getInstance(this);
+
     }
 
     public void getImageView() {
@@ -120,7 +139,7 @@ public class BitmapActivity extends BaseActivity implements View.OnClickListener
             // 一定都会大于等于目标的宽和高。
             inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
             Log.d("Tag", "inSampleSize=" + inSampleSize + "缩放比例  heightRatio=" + heightRatio + " widthRatio=" + widthRatio
-                    + "加载目标图片原有 宽高 =height=" + height + "  width=" + width+"imageType="+imageType);
+                    + "加载目标图片原有 宽高 =height=" + height + "  width=" + width + "imageType=" + imageType);
         }
         return inSampleSize;
     }

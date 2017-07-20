@@ -6,6 +6,7 @@ import android.os.Message;
 
 import cn.com.kjer.practice.R;
 import cn.com.kjer.practice.BaseActivity;
+import cn.com.kjer.practice.ViewServer;
 import cn.com.kjer.practice.canvasTest.views.CanvasView;
 
 /**

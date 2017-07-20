@@ -1,7 +1,7 @@
 package cn.com.kjer.practice;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
@@ -14,7 +14,9 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        ViewServer.get(this).addWindow(this);
     }
 
     @Override
@@ -24,6 +26,7 @@ public class BaseActivity extends AppCompatActivity {
         onFindViews();
         onSetData();
         onSetListener();
+
     }
 
 
@@ -43,7 +46,6 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected void onFindViews() {
-
     }
 
     protected void onSetData() {
@@ -70,5 +72,12 @@ public class BaseActivity extends AppCompatActivity {
         RefWatcher refWatcher = MyApplication.getRefWatcher(this);
         refWatcher.watch(this);
         super.onDestroy();
+        ViewServer.get(this).removeWindow(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ViewServer.get(this).setFocusedWindow(this);
     }
 }

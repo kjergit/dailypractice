@@ -1,7 +1,6 @@
 package cn.com.kjer.practice;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,16 +10,20 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import cn.com.kjer.practice.canvasTest.activitys.CanvasActivity;
+import cn.com.kjer.practice.carouselfigure.CarouselActivity;
+import cn.com.kjer.practice.carouselfigure.CarouselActivity2;
 import cn.com.kjer.practice.collectionitempicker.ListDataActivity;
 import cn.com.kjer.practice.drawerLayout.DrawerLayoutActivity;
 import cn.com.kjer.practice.loadImage.BitmapActivity;
 import cn.com.kjer.practice.loadImage.DownLoadActivity;
+import cn.com.kjer.practice.rxjava.RxJavaBaseTest;
+import cn.com.kjer.practice.slideConflict.SlideConflictActivity;
+import cn.com.kjer.practice.touch.TouchActivity;
 import cn.com.kjer.practice.utils.SystemUtil;
 import cn.com.kjer.practice.volleryTest.VolleryTestActivity;
 
@@ -31,11 +34,63 @@ public class HomeActivity extends BaseActivity {
     private DrawerLayout mDrawerLayout;
     private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
+    private final String Tag = "HomeActivity ";
+
+
+    @Override
+    protected void onResume() {
+        Log.d(Tag,"onResume ...");
+        super.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("keyvalue","saved data!!!");
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        String s= (String) savedInstanceState.get("keyvalue");
+        Log.d(Tag," onRestoreInstanceState  value="+s);
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if(savedInstanceState!=null){
+           String value = (String) savedInstanceState.get("keyvalue");
+            int keyNum=savedInstanceState.getInt("key");
+            Log.d(Tag,"oncreat get value = "+value);
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d(Tag, "onStop。。。");
+        super.onStop();
+
+    }
+
+    @Override
+    protected void onPostResume() {
+        Log.d(Tag, "onStart。。。");
+
+        super.onPostResume();
+    }
+
+    @Override
+    protected void onStart() {
+        Log.d(Tag, "onStart。。。");
+        super.onStart();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.d(Tag, "onPause。。。");
+        super.onPause();
     }
 
     @Override
@@ -92,6 +147,21 @@ public class HomeActivity extends BaseActivity {
                         break;
                     case 5:
                         startActivity(new Intent(HomeActivity.this, DrawerLayoutActivity.class));
+                        break;
+                    case 6:
+                        startActivity(new Intent(HomeActivity.this, TouchActivity.class));
+                        break;
+                    case 7:
+                        startActivity(new Intent(HomeActivity.this, CarouselActivity.class));
+                        break;
+                    case 8:
+                        startActivity(new Intent(HomeActivity.this, RxJavaBaseTest.class));
+                        break;
+                    case 9:
+                        startActivity(new Intent(HomeActivity.this, CarouselActivity2.class));
+                        break;
+                    case 10:
+                        startActivity(new Intent(HomeActivity.this, SlideConflictActivity.class));
                         break;
                     default:
                         break;
