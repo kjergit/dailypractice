@@ -2,6 +2,7 @@ package cn.com.kjer.practice.slideConflict;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -16,10 +17,15 @@ import java.util.List;
 import cn.com.kjer.practice.BaseActivity;
 import cn.com.kjer.practice.R;
 
+/**
+ * 滑动冲突练习
+ */
 public class SlideConflictActivity extends BaseActivity {
 
 
-    private MyViewPager myViewPager;
+//    private ViewPager myViewPager;
+
+    private MyViewPager2 myViewPager;
     private List<View> mViewList = new ArrayList<View>();
     private Context mContext = this;
     MyPagerAdapter myPagerAdapter;
@@ -34,7 +40,7 @@ public class SlideConflictActivity extends BaseActivity {
     @Override
     protected void onFindViews() {
         super.onFindViews();
-        myViewPager = (MyViewPager) findViewById(R.id.my_pager_view);
+        myViewPager = (MyViewPager2) findViewById(R.id.my_pager_view);
     }
 
     ArrayList<String> datas;
@@ -57,7 +63,13 @@ public class SlideConflictActivity extends BaseActivity {
         for (int i = 0; i < 5; i++) {//viewpager have five son
             View view;
             if (isListView) {
-                ListView mListView = new ListView(mContext);
+                //内部拦截法 list 为 ListView
+//                ListView mListView = new ListView(mContext);
+
+
+//                //外部拦截法
+                IListView mListView = new IListView(mContext);
+
                 ArrayAdapter<String> adapter = new ArrayAdapter<>
                         (mContext, android.R.layout.simple_list_item_1, datas);
                 //设置adapter

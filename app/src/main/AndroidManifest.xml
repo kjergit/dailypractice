@@ -11,6 +11,14 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!--aidl service onbind中 自定义权限 限制 访问远程服务 -->
+    <permission
+        android:name="cn.com.kjer.practice.binderTest.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
+    <user-permission
+        android:name="cn.com.kjer.practice.binderTest.permission.ACCESS_BOOK_SERVICE"
+        android:protectionLevel="normal" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -110,10 +118,20 @@
             android:name=".rxjava.RxJavaBaseTest"
             android:label="@string/rx_java_base"
             android:launchMode="standard" />
-        <!--滑动冲突-->
+        <!-- 滑动冲突 -->
         <activity
             android:name=".slideConflict.SlideConflictActivity"
             android:label="@string/slide"
+            android:launchMode="standard" />
+
+        <!-- ipc binder test   配置为另一个单独进程中执行 进程间通讯 -->
+        <service
+            android:name=".binderTest.BookManagerService"
+            android:process=":remote" />
+
+        <activity
+            android:name=".binderTest.BookManagerActivity"
+            android:label="@string/rx_java_base"
             android:launchMode="standard" />
 
     </application>

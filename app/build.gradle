@@ -117,6 +117,14 @@ android {
             flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
         }
     }
+
+
+}
+sourceSets {
+    //配置aidl 文件路径
+//     main {
+//         aidl.srcDirs = ['src/main/java']
+//     }
 }
 
 dependencies {

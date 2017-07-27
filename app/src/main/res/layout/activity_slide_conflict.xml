@@ -4,7 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <cn.com.kjer.practice.slideConflict.MyViewPager
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="可左右上下滑动"
+        android:textColor="@color/blue" />
+
+    <cn.com.kjer.practice.slideConflict.MyViewPager2
         android:id="@+id/my_pager_view"
         android:layout_width="match_parent"
         android:layout_height="500dp" />
@@ -12,7 +19,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="asdfasdf"
+        android:textSize="15sp"
+        android:text="自定义ViewPager与ListView滑动冲突练习"
         android:textColor="@color/blue" />
 
 

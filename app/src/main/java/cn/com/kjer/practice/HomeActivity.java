@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import cn.com.kjer.practice.binderTest.BookManagerActivity;
 import cn.com.kjer.practice.canvasTest.activitys.CanvasActivity;
 import cn.com.kjer.practice.carouselfigure.CarouselActivity;
 import cn.com.kjer.practice.carouselfigure.CarouselActivity2;
@@ -39,20 +40,20 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void onResume() {
-        Log.d(Tag,"onResume ...");
+        Log.d(Tag, "onResume ...");
         super.onResume();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putString("keyvalue","saved data!!!");
+        outState.putString("keyvalue", "saved data!!!");
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        String s= (String) savedInstanceState.get("keyvalue");
-        Log.d(Tag," onRestoreInstanceState  value="+s);
+        String s = (String) savedInstanceState.get("keyvalue");
+        Log.d(Tag, " onRestoreInstanceState  value=" + s);
         super.onRestoreInstanceState(savedInstanceState);
     }
 
@@ -60,10 +61,10 @@ public class HomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        if(savedInstanceState!=null){
-           String value = (String) savedInstanceState.get("keyvalue");
-            int keyNum=savedInstanceState.getInt("key");
-            Log.d(Tag,"oncreat get value = "+value);
+        if (savedInstanceState != null) {
+            String value = (String) savedInstanceState.get("keyvalue");
+            int keyNum = savedInstanceState.getInt("key");
+            Log.d(Tag, "oncreat get value = " + value);
         }
     }
 
@@ -162,6 +163,9 @@ public class HomeActivity extends BaseActivity {
                         break;
                     case 10:
                         startActivity(new Intent(HomeActivity.this, SlideConflictActivity.class));
+                        break;
+                    case 11:
+                        startActivity(new Intent(HomeActivity.this, BookManagerActivity.class));
                         break;
                     default:
                         break;

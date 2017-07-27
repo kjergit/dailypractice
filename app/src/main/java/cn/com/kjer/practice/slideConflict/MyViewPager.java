@@ -8,6 +8,7 @@ import android.view.MotionEvent;
 
 /**
  * Created by simon on 2017/7/14.
+ * 外部拦截法 viewgroup
  */
 
 public class MyViewPager extends ViewPager {
@@ -24,14 +25,11 @@ public class MyViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        //注释原代码，模拟滑动冲突事件
-//     return super.onInterceptTouchEvent(ev);
-        // over
-
-        //以下为 解决viewpager 和listview 横向与纵向冲突问题 外部解决方法
+        //以下为 解决类似viewpager 和listview 横向与纵向冲突问题 外部解决方法
         boolean intercepted = false;//默认false ，会造成冲突
         int x = (int) ev.getX();
         int y = (int) ev.getY();
+        Log.d("mypager", "onInterceptTouchEvent  x=" + x + "  y =" + y);
         final int action = ev.getAction() & MotionEvent.ACTION_MASK;
         switch (action) {
             case MotionEvent.ACTION_DOWN:
@@ -44,9 +42,9 @@ public class MyViewPager extends ViewPager {
                 int deltaX = x - mLastXIntercept;
                 //纵坐标位移增量
                 int deltaY = y - mLastYIntercept;
-                if (Math.abs(deltaX)>Math.abs(deltaY)){
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
                     intercepted = true;//拦截 交给自己处理
-                }else{
+                } else {
                     intercepted = false;
                 }
                 break;
@@ -60,7 +58,7 @@ public class MyViewPager extends ViewPager {
         mLastXIntercept = x;
         mLastYIntercept = y;
 
-        Log.e("pager","intercepted = "+intercepted);
+        Log.e("pager", "intercepted = " + intercepted);
         return intercepted;
     }
 }

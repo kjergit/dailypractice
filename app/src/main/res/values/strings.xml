@@ -18,6 +18,7 @@
     <string name="rx_java_base">rx_java_base</string>
     <string name="carousel2">轮播图2</string>
     <string name="slide">滑动冲突</string>
+    <string name="binder">binderTest</string>
 
 
     <!--HomeActivity list name-->
@@ -33,6 +34,7 @@
         <item>@string/rx_java_base</item>
         <item>@string/carousel2</item>
         <item>@string/slide</item>
+        <item>@string/binder</item>
 
     </string-array>
 
