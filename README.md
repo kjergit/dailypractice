@@ -57,7 +57,7 @@ ConnectListener.SimpleConnectListener simpleConnectListener = new ConnectListene
   
   
 **下图为PowerEye**
-![](http://avatar.csdn.net/D/6/7/1_qq_21376985.jpg)
+![](https://github.com/kjergit/dailypractice/blob/master/powerEye.jpg?raw=true)
 
 也可以到我们的[官网](http://www.powervision.me/en/)去了解更多产品
 
