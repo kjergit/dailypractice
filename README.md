@@ -13,21 +13,31 @@
 ***
 
 ## 2 sdk——V1.0包含内容 
-### 1）API中可以访问PowerEye通用挂载的应用API函数（iOS&Android）
-### 2)	示例代码和教程（用户可以通过demo中的事例代码进行初步了解）
-### 3)	开发人员指南和API文档；
+
+   ### 1）API中可以访问PowerEye通用挂载的应用API函数（iOS&Android）
+   
+   ### 2)	示例代码和教程（用户可以通过demo中的事例代码进行初步了解）
+   
+   ### 3)	开发人员指南和API文档；
+   
 ***
+
 # 3 Environment Required（Android）
-  ## JDK7+
-  ## AndroidStudio 3.0+
+  ## JDK7+
+  ## AndroidStudio 3.0+
+  
   ***
+  
  # 4调用步骤
  ### 1初始化sdk 
  `mPowerSDK = PowerSDK.getInstance();`
+ 
  ### 2连接设备
   `mPowerSDK.startConnectSDK(ConnectIpAndPortFactory.getEggConnectIpAndPortFactory());`
+  
  ###3设置连接监听
  `mPowerSDK.addConnectListener(simpleConnectListener);`
+ 
  ###4对应的连接回调
   `ConnectListener.SimpleConnectListener simpleConnectListener = new ConnectListener.SimpleConnectListener() {
         @Override
@@ -54,6 +64,7 @@
             Log.e(TAG, "onChainDisconnected");
         }
     };`
+    
   ## 更多api使用，请详见demo中以及sdk文档说明。
 
 
