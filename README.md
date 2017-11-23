@@ -12,7 +12,7 @@
 
 ***
 
-## 2 sdk——V1.0包含内容 
+# 2 sdk——V1.0包含内容 
 
    ### 1）API中可以访问PowerEye通用挂载的应用API函数（iOS&Android）
    
@@ -28,7 +28,7 @@
   
   ***
   
- # 4调用步骤
+# 4调用步骤
  ### 1初始化sdk 
  `mPowerSDK = PowerSDK.getInstance();`
  
